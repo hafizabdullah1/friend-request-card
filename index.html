@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+        body{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: cornflowerblue;
+        }
+        #card{
+            height: 60vh;
+            width: 18vw;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 25px;
+        }
+        #card img{
+            width: 150%;
+            height: 150%;
+            object-fit: cover;
+            position: relative;
+            left: -33px;
+            top: -21px;
+            transform: rotate(20deg);
+        }
+        .img_div{
+            width: 100%;
+            overflow: hidden;
+            height: 55%;
+                border-radius: 10px;
+        }
+        #card h1{
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        #card h5{
+            font-size: 25px;
+            color: red;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        #btn_container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #card button{
+            background-color: cadetblue;
+            color: white;
+            font-weight: 700;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+            margin:5px;
+        }
+        #card #remove{
+            background-color: #dadada;
+            color: #111;
+        }
+    </style>
+</head>
+<body>
+    <div id="card">
+       <div class="img_div">
+        <img src="./img/me.jpg" alt="user img">
+       </div>
+        <h1>Abdullah</h1>
+        <h5>Stranger</h5>
+        <div id="btn_container">
+            <button id="remove">Remove</button>
+            <button id="add">Add friend</button>
+        </div>
+    </div>
+</body>
+<script>
+    var Istatus =  document.querySelector('h5');
+
+    var add = document.querySelector('#add');
+
+    var remove = document.querySelector('#remove');
+
+    add.addEventListener('click', function(){
+        Istatus.innerHTML = 'Friend';
+        Istatus.style.color ='green';
+    });
+
+    remove.addEventListener('click', function(){
+        Istatus.innerHTML = 'Stranger';
+        Istatus.style.color ='red';
+    });
+</script>
+</html>
